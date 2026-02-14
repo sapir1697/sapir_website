@@ -185,9 +185,10 @@
 @media (min-width: 992px) {
     .stats-grid {
         grid-template-columns: repeat(4, 1fr);
-        divide-x: 1px solid rgba(255, 255, 255, 0.1);
-        divide-x-reverse: true;
-        /* For RTL */
+    }
+
+    .stat-item:not(:last-child) {
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
     }
 }
 
