@@ -113,6 +113,7 @@
     letter-spacing: 1.5px;
     font-size: 0.9rem;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 .pd-header-title {
@@ -121,6 +122,8 @@
     line-height: 1.1;
     margin-bottom: 1rem;
     text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 100%;
 }
 
 @media (min-width: 992px) {
@@ -180,6 +183,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    text-align: center;
 }
 
 @media (min-width: 992px) {
@@ -253,14 +257,16 @@
     color: #0f172a;
     margin-bottom: 2rem;
     position: relative;
-    display: inline-block;
+    display: block;
+    text-align: center;
 }
 
 .section-heading::after {
     content: '';
     position: absolute;
     bottom: -10px;
-    right: 0;
+    right: 50%;
+    transform: translateX(50%);
     width: 60px;
     height: 4px;
     background: #c5a669;
@@ -298,6 +304,12 @@
     margin-bottom: 1.5rem;
 }
 
+@media (max-width: 768px) {
+    .story-text {
+        text-align: center;
+    }
+}
+
 .tech-specs {
     background: #f8fafc;
     border: 1px solid #e2e8f0;
@@ -310,12 +322,14 @@
     font-weight: 700;
     color: #0f172a;
     margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .specs-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
+    justify-content: center;
 }
 
 .spec-item {
@@ -625,11 +639,12 @@
 
 .dt-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-bottom: 0.75rem;
     flex-wrap: wrap;
     gap: 0.5rem;
+    text-align: center;
 }
 
 .dt-info {
@@ -820,7 +835,7 @@
     display: block;
     font-size: 0.9rem;
     color: #64748b;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
     font-weight: 600;
 }
 
@@ -832,9 +847,12 @@
     display: flex;
     gap: 1rem;
     overflow-x: auto;
-    padding-bottom: 0.5rem;
+    padding: 0.5rem 0;
     scrollbar-width: thin;
     scrollbar-color: #cbd5e1 transparent;
+    -webkit-overflow-scrolling: touch;
+    /* Smooth mobile scroll */
+    width: 100%;
 }
 
 .fp-gallery-thumb {
@@ -862,4 +880,90 @@
     font-size: 0.85rem;
     color: #94a3b8;
     margin-top: auto;
+}
+
+/* Mobile Responsiveness for Floor Plans & Other Sections */
+@media (max-width: 768px) {
+    .pd-floorplans {
+        padding: 4rem 0;
+    }
+
+    .fp-display {
+        padding: 1rem;
+        border-radius: 16px;
+    }
+
+    .fp-main-layout {
+        gap: 2rem;
+    }
+
+    .fp-sketch-container {
+        padding: 1rem;
+    }
+
+    .fp-image-wrapper {
+        min-height: 200px;
+    }
+
+    .fp-header-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .fp-header-info {
+        text-align: center;
+    }
+
+    .fp-size {
+        justify-content: center;
+    }
+
+    .fp-label {
+        font-size: 0.7rem;
+        padding: 2px 8px;
+    }
+
+    .fp-label-small {
+        text-align: center;
+    }
+
+    .fp-gallery-scroll {
+        justify-content: center;
+        /* Center if items are few, scrollable if many */
+        padding-bottom: 1rem;
+    }
+
+    .fp-gallery-thumb {
+        flex: 0 0 140px;
+        /* Slightly larger for better touch */
+        height: 100px;
+    }
+
+    .fp-note {
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    /* Fix stats center in mobile */
+    .stat-item {
+        text-align: center;
+    }
+
+    .stat-text {
+        align-items: center;
+    }
+
+    .pd-cta-footer h2 {
+        font-size: 1.8rem;
+    }
+
+    .pd-cta-footer p {
+        font-size: 1rem;
+    }
+
+    .cta-button-large {
+        padding: 0.8rem 2rem;
+        font-size: 1.1rem;
+        width: 100%;
+        justify-content: center;
+    }
 }

@@ -81,6 +81,7 @@ ul {
   cursor: pointer;
 }
 
+
 .btn-primary {
   background-color: var(--accent-color);
   color: white;
@@ -109,11 +110,21 @@ section {
   padding: 5rem 0;
 }
 
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
   margin-bottom: 1rem;
+  width: 100%;
 }
 
 .section-subtitle {
@@ -123,6 +134,7 @@ section {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  display: block;
 }
 
 .divider {
