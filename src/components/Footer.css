@@ -1,0 +1,83 @@
+.footer {
+    padding: 2rem 0;
+    background-color: #ffffff;
+    /* Explicit white to cover grid lines */
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 4rem;
+    border: none !important;
+    position: relative;
+    z-index: 50;
+    /* Ensure it sits above the fixed grid overlay */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column-reverse;
+    /* Copyright at bottom on mobile */
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+    }
+}
+
+.footer-copyright {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.separator {
+    color: var(--grid-line);
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .separator {
+        display: inline;
+    }
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.footer-link,
+.admin-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+    opacity: 0.7;
+}
+
+.footer-link:hover,
+.admin-link:hover {
+    color: var(--accent-color);
+    opacity: 1;
+}
+
+.admin-link {
+    opacity: 0.5;
+}

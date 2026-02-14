@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+    <defs>
+        <style>
+            .cls-1 {
+                fill: none;
+                stroke: #0f172a;
+                stroke-width: 4px;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+            }
+            .cls-2 {
+                font-family: 'Heebo', sans-serif;
+                fill: #0f172a;
+                text-anchor: middle;
+            }
+            .title {
+                font-size: 60px;
+                font-weight: 900;
+            }
+            .subtitle {
+                font-size: 24px;
+                font-weight: 300;
+                letter-spacing: 1px;
+            }
+        </style>
+    </defs>
+    
+    <!-- Building 1 (Left) -->
+    <path class="cls-1" d="M80,200 L80,140 L120,110 L120,200" />
+    
+    <!-- Building 2 (Center - Tallest) -->
+    <path class="cls-1" d="M120,200 L120,80 L180,110 L180,200" />
+    
+    <!-- Building 3 (Right) -->
+    <path class="cls-1" d="M180,200 L180,100 L240,130 L240,200" />
+    
+    <!-- Design Element lines -->
+    <line class="cls-1" x1="100" y1="125" x2="100" y2="200" />
+    <line class="cls-1" x1="140" y1="110" x2="140" y2="200" />
+    <line class="cls-1" x1="160" y1="120" x2="160" y2="200" />
+    <line class="cls-1" x1="200" y1="110" x2="200" y2="200" />
+    
+    <!-- Base Line -->
+    <line class="cls-1" x1="40" y1="200" x2="360" y2="200" />
+    
+    <!-- Text -->
+    <text x="200" y="260" class="cls-2 title">ספיר טל</text>
+    <text x="200" y="290" class="cls-2 subtitle">ייזום הנדסה וביצוע</text>
+</svg>

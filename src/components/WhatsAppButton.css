@@ -1,0 +1,196 @@
+.whatsapp-container {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 1000;
+}
+
+.whatsapp-float {
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    /* Reset fixed, container handles it */
+}
+
+.whatsapp-float svg {
+    width: 35px;
+    height: 35px;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+    box-shadow: 2px 4px 6px #666;
+}
+
+/* Chat Widget */
+.whatsapp-chat-widget {
+    position: absolute;
+    bottom: 75px;
+    /* Closer to the button to reduce gap */
+    left: 0;
+    width: 300px;
+    background: #e9edef;
+    border-radius: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    overflow: visible;
+    /* Allow bridge to be outside */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.9);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: bottom left;
+    z-index: 1001;
+    /* Above the button if overlap */
+}
+
+/* Invisible bridge to prevent closing when moving mouse */
+.whatsapp-chat-widget::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: transparent;
+}
+
+.whatsapp-chat-widget.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+/* Header */
+.whatsapp-chat-header {
+    background-color: #095e54;
+    color: white;
+    padding: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.wa-header-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.wa-close-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.8;
+}
+
+.wa-close-btn:hover {
+    opacity: 1;
+}
+
+/* Body */
+.whatsapp-chat-body {
+    padding: 20px;
+    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+    /* Simple WA subtle background pattern or just color */
+    background-color: #efe7dd;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.wa-message-bubble {
+    background: white;
+    padding: 15px;
+    border-radius: 0 15px 15px 15px;
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-right: 10px;
+    /* Space from left edge */
+}
+
+/* Little tail for bubble */
+.wa-message-bubble::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: white;
+    border-right-color: white;
+    border-radius: 2px;
+}
+
+.wa-message-sender {
+    color: #b3b3b3;
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+}
+
+.wa-message-text {
+    color: #111;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.wa-message-time {
+    text-align: left;
+    font-size: 0.7rem;
+    color: #999;
+}
+
+/* Footer */
+.whatsapp-chat-footer {
+    padding: 15px;
+    background: white;
+    text-align: center;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.wa-chat-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: #25d366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 24px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+.wa-chat-btn:hover {
+    background-color: #1ea952;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}

@@ -1,0 +1,114 @@
+.privacy-page {
+    padding-top: 60px;
+    /* Reduced further */
+    padding-bottom: 40px;
+    background: #ffffff;
+    min-height: 100vh;
+}
+
+.privacy-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    direction: rtl;
+}
+
+.privacy-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.privacy-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.privacy-header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 40px;
+    height: 3px;
+    background: #f97316;
+    border-radius: 2px;
+}
+
+.privacy-content {
+    color: #334155;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* OVERRIDE global section padding from index.css */
+section.privacy-section {
+    padding: 0 !important;
+    margin-bottom: 1.25rem !important;
+}
+
+.privacy-section h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 0.1rem;
+    margin-top: 0;
+}
+
+.privacy-section p {
+    margin-bottom: 0.4rem;
+}
+
+.privacy-section ul {
+    margin-bottom: 0.4rem;
+    padding-right: 1.5rem;
+}
+
+.privacy-section li {
+    margin-bottom: 0.2rem;
+    position: relative;
+}
+
+.privacy-section li::before {
+    content: "•";
+    color: #f97316;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-right: -1em;
+}
+
+.last-updated {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e2e8f0;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    text-align: center;
+}
+
+/* Accessibility & Dark Mode Support */
+body.acc-dark-mode .privacy-page {
+    background: #111 !important;
+}
+
+body.acc-dark-mode .privacy-header h1,
+body.acc-dark-mode .privacy-section h2 {
+    color: #eee !important;
+}
+
+body.acc-dark-mode .privacy-content {
+    color: #cbd5e1 !important;
+}
+
+@media (max-width: 768px) {
+    .privacy-header h1 {
+        font-size: 1.6rem;
+    }
+}

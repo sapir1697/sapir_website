@@ -1,0 +1,264 @@
+/* Accessibility Widget Styles */
+
+:root {
+    --accessibility-primary: #f97316;
+    /* Match site accent color */
+    --accessibility-bg: #ffffff;
+    --accessibility-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --accessibility-border: #e2e8f0;
+}
+
+.accessibility-widget {
+    position: fixed;
+    bottom: 110px;
+    right: 25px;
+    z-index: 10000;
+    direction: rtl;
+}
+
+.accessibility-toggle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--accessibility-primary) !important;
+    color: white !important;
+    border: none !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--accessibility-shadow);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.accessibility-toggle:hover {
+    transform: scale(1.1);
+}
+
+.accessibility-toggle.active {
+    background: #ea580c !important;
+}
+
+.accessibility-panel {
+    position: absolute;
+    bottom: 65px;
+    right: 0;
+    width: 320px;
+    background: white !important;
+    border-radius: 16px;
+    box-shadow: var(--accessibility-shadow);
+    border: 1px solid var(--accessibility-border) !important;
+    overflow: hidden;
+    animation: slideUp 0.3s ease-out;
+    color: #1e293b !important;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.accessibility-header {
+    background: #f8fafc !important;
+    padding: 1rem;
+    border-bottom: 1px solid var(--accessibility-border) !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accessibility-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1e293b !important;
+}
+
+.close-panel {
+    background: none !important;
+    border: none !important;
+    color: #64748b !important;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.accessibility-body {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    max-height: 400px;
+    overflow-y: auto;
+    background: white !important;
+}
+
+.accessibility-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 0.5rem;
+    background: #f1f5f9 !important;
+    border-radius: 12px;
+    border: 1px solid transparent !important;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    font-family: inherit;
+    color: #475569 !important;
+}
+
+.accessibility-option:hover {
+    background: #e2e8f0 !important;
+}
+
+.accessibility-option.active {
+    background: #fff7ed !important;
+    color: #c2410c !important;
+    border-color: #f97316 !important;
+}
+
+.accessibility-option.full-width {
+    grid-column: span 2;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.option-text {
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: inherit !important;
+}
+
+.accessibility-footer {
+    padding: 1rem;
+    background: #f8fafc !important;
+    border-top: 1px solid var(--accessibility-border) !important;
+}
+
+.reset-btn {
+    width: 100%;
+    padding: 0.6rem;
+    background: #ef4444 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Accessibility Global Classes managed by JS on document.body */
+
+/* Apply filters ONLY to the content layer, NOT the widget */
+body.acc-grayscale .accessibility-content-layer {
+    filter: grayscale(100%) !important;
+}
+
+body.acc-high-contrast .accessibility-content-layer {
+    filter: contrast(125%) brightness(110%) !important;
+}
+
+/* DAR MODE FIX: Override CSS variables */
+body.acc-dark-mode {
+    --bg-main: #111111 !important;
+    --bg-secondary: #1a1a1a !important;
+    --text-color: #eeeeee !important;
+    --text-muted: #94a3b8 !important;
+    --grid-line: #334155 !important;
+    --primary-color: #ffffff !important;
+}
+
+body.acc-dark-mode .accessibility-content-layer {
+    background: #111111 !important;
+    color: #eeeeee !important;
+}
+
+/* Force backgrounds on all sections/containers in dark mode */
+body.acc-dark-mode .accessibility-content-layer,
+body.acc-dark-mode .accessibility-content-layer *:not(.accessibility-widget):not(.accessibility-panel) {
+    background-color: transparent !important;
+}
+
+body.acc-dark-mode .accessibility-content-layer div,
+body.acc-dark-mode .accessibility-content-layer section,
+body.acc-dark-mode .accessibility-content-layer nav,
+body.acc-dark-mode .accessibility-content-layer footer {
+    background-color: var(--bg-main) !important;
+    color: var(--text-color) !important;
+    border-color: var(--grid-line) !important;
+}
+
+body.acc-readable-font,
+body.acc-readable-font * {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+body.acc-highlight-links a {
+    background: #fffb00 !important;
+    color: black !important;
+    outline: 2px solid black !important;
+    text-decoration: underline !important;
+}
+
+body.acc-stop-animations .accessibility-content-layer * {
+    transition: none !important;
+    animation: none !important;
+}
+
+body.acc-big-cursor,
+body.acc-big-cursor * {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='black' stroke='white' stroke-width='1.5'%3E%3Cpath d='M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z'/%3E%3C/svg%3E"), auto !important;
+}
+
+/* Reading Guide Line */
+.reading-guide {
+    position: fixed;
+    height: 4px;
+    background: #f97316;
+    width: 100%;
+    z-index: 9999;
+    pointer-events: none;
+    box-shadow: 0 0 15px rgba(249, 115, 22, 0.5);
+}
+
+/* FONT SIZE FIX: Target elements more aggressively */
+body.font-xl *,
+body.font-xl {
+    font-size: 1.1em !important;
+}
+
+body.font-xxl *,
+body.font-xxl {
+    font-size: 1.25em !important;
+}
+
+/* Re-apply logic for large elements to maintain hierarchy */
+body.font-xl h1 {
+    font-size: 3rem !important;
+}
+
+body.font-xl h2 {
+    font-size: 2.5rem !important;
+}
+
+body.font-xxl h1 {
+    font-size: 3.5rem !important;
+}
+
+body.font-xxl h2 {
+    font-size: 3rem !important;
+}

@@ -1,0 +1,35 @@
+.grid-overlay {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100vh;
+    width: 100%;
+    max-width: 1200px;
+    /* Matches standard container */
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: -1;
+    padding: 0 20px;
+    /* Matches container padding */
+}
+
+.grid-line {
+    width: 1px;
+    height: 100%;
+    background-color: var(--grid-line);
+}
+
+/* Add horizontal lines to sections for the full grid effect */
+section {
+    border-bottom: 1px solid var(--grid-line);
+    position: relative;
+    z-index: 1;
+    /* Ensure content sits above grid */
+}
+
+/* Ensure navbar also respects the grid look */
+.navbar {
+    border-bottom: 1px solid var(--grid-line);
+}
