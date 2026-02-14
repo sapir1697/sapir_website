@@ -5,6 +5,14 @@
     z-index: 1000;
 }
 
+@media (max-width: 768px) {
+    .whatsapp-container {
+        bottom: 80px;
+        /* High enough to clear address bar / home indicator */
+        left: 20px;
+    }
+}
+
 .whatsapp-float {
     width: 60px;
     height: 60px;

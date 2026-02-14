@@ -18,15 +18,16 @@
 
 @media (max-width: 768px) {
     .accessibility-widget {
-        bottom: 140px;
-        right: 15px;
+        bottom: 80px;
+        /* Same as WhatsApp for balance */
+        right: 20px;
     }
 }
 
 .accessibility-toggle {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
+    border-radius: 50% !important;
     background: var(--accessibility-primary) !important;
     color: white !important;
     border: none !important;

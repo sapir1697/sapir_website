@@ -5,7 +5,7 @@ import './Hero.css';
 
 const Hero = () => {
     return (
-        <header className="hero">
+        <header id="home" className="hero">
             <div className="container hero-container">
                 <div className="hero-text-side">
                     <motion.h1

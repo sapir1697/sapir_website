@@ -102,6 +102,26 @@
     color: #1e293b;
 }
 
+@media (max-width: 640px) {
+    .cookie-consent-wrapper {
+        bottom: 15px;
+        width: 95%;
+    }
+
+    .cookie-consent-card {
+        padding: 1rem;
+    }
+
+    .cookie-actions {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .cookie-actions button {
+        width: 100%;
+    }
+}
+
 /* Ensure privacy link looks good in darkness */
 body.acc-dark-mode .cookie-consent-card {
     background: rgba(30, 41, 59, 0.95);
